@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gestión Segura de Información Clínica</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #015e5e;
+      --secondary-color: #017a7a;
+      --light-bg: #f3f6f9;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+    }
+
+    .navbar-custom {
+      background-color: var(--primary-color);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .user-name {
+      color: white;
+      font-weight: bold;
+    }
+
+    .dropdown-menu {
+      background-color: var(--primary-color);
+      border: none;
+    }
+
+    .dropdown-item {
+      color: white;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color);
+    }
+
+    .info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .info-card {
+      background-color: white;
+      padding: 1.2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      border-left: 6px solid var(--primary-color);
+    }
+
+    .info-card h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.1rem;
+      color: var(--primary-color);
+    }
+
+    .info-card p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .record-table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+      background-color: #f1f4f7;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .badge {
+      background-color: #17a2b8;
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .access-btn {
+      background-color: var(--secondary-color);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-between">
+
+      <!-- Botón hamburguesa siempre visible -->
+      <div class="dropdown mb-2 mb-lg-0">
+        <button class="navbar-toggler d-block" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="dashboard.html">Inicio</a></li>
+          <li><a class="dropdown-item" href="CitasAgendadas.html">Agendar</a></li>
+          <li><a class="dropdown-item" href="analisis.html">Análisis</a></li>
+          <li><a class="dropdown-item" href="alamcenamiento.html">Base de Datos</a></li>
+          <li><a class="dropdown-item" href="Login.html">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+
+      <!-- Título centrado -->
+      <a class="navbar-brand text-center mx-2" href="#">Gestión Segura de Información Clínica</a>
+
+      <!-- Usuario -->
+      <span class="user-name mt-2 mt-lg-0">Dr. Alejandro Ruiz</span>
+
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container mt-4">
+
+    <div class="info-boxes">
+      <div class="info-card">
+        <h3>Encriptación Activa</h3>
+        <p>Los registros clínicos se almacenan con cifrado AES-256.</p>
+      </div>
+      <div class="info-card">
+        <h3>Control de Accesos</h3>
+        <p>Solo personal autorizado puede acceder a información sensible.</p>
+      </div>
+      <div class="info-card">
+        <h3>Auditoría de Actividades</h3>
+        <p>Se registra quién accede, modifica o descarga los datos clínicos.</p>
+      </div>
+    </div>
+
+    <div class="table-responsive">
+      <table class="record-table table table-striped">
+        <thead class="table-light">
+          <tr>
+            <th>ID Paciente</th>
+            <th>Nombre</th>
+            <th>Fecha Último Acceso</th>
+            <th>Estado de Seguridad</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CL-2041</td>
+            <td>Andrés Pineda</td>
+            <td>24/04/2025 09:14</td>
+            <td><span class="badge">Cifrado y Restringido</span></td>
+            <td><button class="access-btn">Ver Registro</button></td>
+          </tr>
+          <tr>
+            <td>CL-2042</td>
+            <td>Valentina Ruiz</td>
+            <td>23/04/2025 16:20</td>
+            <td><span class="badge">Cifrado y Restringido</span></td>
+            <td><button class="access-btn">Ver Registro</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

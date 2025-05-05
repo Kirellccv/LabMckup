@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Citas Agendadas</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #015e5e;
+      --secondary-color: #017a7a;
+      --light-bg: #eef3f7;
+    }
+
+    body {
+      background-color: var(--light-bg);
+      font-family: 'Segoe UI', sans-serif;
+      color: #2b2b2b;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-custom {
+      background-color: var(--primary-color);
+    }
+
+    .navbar-brand {
+      font-size: 1.5rem;
+      color: white;
+    }
+
+    .user-name {
+      color: white;
+      font-weight: bold;
+    }
+
+    .dropdown-menu {
+      background-color: var(--primary-color);
+      border: none;
+    }
+
+    .dropdown-item {
+      color: white;
+    }
+
+    .dropdown-item:hover {
+      background-color: var(--secondary-color);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-top: 0;
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 2rem;
+    }
+
+    th, td {
+      padding: 1rem;
+      border-bottom: 1px solid #ccc;
+      text-align: left;
+    }
+
+    th {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    tr:hover {
+      background-color: #f5fafd;
+    }
+
+    .estado {
+      padding: 0.3rem 0.6rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+
+    .pendiente { background-color: #fff4cc; color: #b58900; }
+    .completado { background-color: #d3f9d8; color: #2f855a; }
+    .cancelado { background-color: #ffd6d6; color: #c53030; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+    <div class="container-fluid d-flex flex-column flex-lg-row align-items-center justify-content-between">
+
+      <!-- Botón hamburguesa -->
+      <div class="dropdown mb-2 mb-lg-0">
+        <button class="navbar-toggler d-block" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="dashboard.html">Inicio</a></li>
+          <li><a class="dropdown-item" href="CitasAgendadas.html">Agendar</a></li>
+          <li><a class="dropdown-item" href="analisis.html">Análisis</a></li>
+          <li><a class="dropdown-item" href="alamcenamiento.html">Base de Datos</a></li>
+          <li><a class="dropdown-item" href="Login.html">Cerrar Sesión</a></li>
+        </ul>
+      </div>
+
+      <!-- Título -->
+      <a class="navbar-brand text-center mx-2" href="#">Citas Agendadas</a>
+
+      <!-- Usuario -->
+      <span class="user-name mt-2 mt-lg-0">Dr. Alejandro Ruiz</span>
+
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="container mt-4">
+    <h2>Agenda de Pacientes</h2>
+
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Paciente</th>
+            <th>Análisis</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Andrea López</td>
+            <td>Hemograma completo</td>
+            <td>2025-04-26</td>
+            <td>09:00</td>
+            <td><span class="estado pendiente">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td>Carlos Méndez</td>
+            <td>Perfil lipídico</td>
+            <td>2025-04-26</td>
+            <td>10:30</td>
+            <td><span class="estado completado">Completado</span></td>
+          </tr>
+          <tr>
+            <td>Lucía Torres</td>
+            <td>Prueba de glucosa</td>
+            <td>2025-04-27</td>
+            <td>11:00</td>
+            <td><span class="estado pendiente">Pendiente</span></td>
+          </tr>
+          <tr>
+            <td>Mario Díaz</td>
+            <td>Examen de orina</td>
+            <td>2025-04-28</td>
+            <td>08:30</td>
+            <td><span class="estado cancelado">Cancelado</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<!-- Botón centrado debajo de la tabla -->
+<div class="text-center mt-4">
+  <a href="Agendamiento.html" id="crearCitaBtn" class="btn" style="background-color: var(--primary-color); color: white; padding: 0.6rem 1.5rem; border-radius: 6px;">
+    Crear Cita
+  </a>
+</div>
+
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
